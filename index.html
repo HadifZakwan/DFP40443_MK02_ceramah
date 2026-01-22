@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page Ceramah Berbayar</title>
+
+  <style>
+    body{font-family: Arial,sans-serif;margin:0;background:#f5f5f5;color:#222;}
+    header{background:#0d47a1;color:white;padding:22px;text-align:center;}
+    .container{max-width:900px;margin:auto;padding:20px;}
+    .box{background:white;padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    h2{margin-top:0;}
+    .img-box{text-align:center;}
+    img{width:160px;height:160px;border-radius:50%;border:1px solid #ddd;margin-top:10px;object-fit:cover;}
+    ul{margin:0;padding-left:18px;line-height:1.8;}
+    label{font-weight:bold;display:block;margin-top:10px;}
+    input, select{width:100%;padding:10px;margin-top:5px;border:1px solid #ccc;border-radius:6px;}
+    button{margin-top:15px;width:100%;padding:12px;border:none;background:#0d47a1;color:white;font-weight:bold;border-radius:8px;cursor:pointer;}
+    button:hover{background:#08306b;}
+    table{width:100%;border-collapse:collapse;margin-top:10px;}
+    th, td{border:1px solid #ddd;padding:10px;text-align:center;}
+    th{background:#e8f0ff;}
+    footer{background:#eaeaea;text-align:center;padding:14px;font-size:13px;color:#333;}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Ceramah Berbayar</h1>
+    <p>Daftar Tempahan Secara Online</p>
+  </header>
+
+  <div class="container">
+
+    <div class="box">
+      <h2>Maklumat Ceramah</h2>
+      <p><b>Tajuk:</b> Strategi Web Iklan & Tempahan</p>
+      <p><b>Tarikh:</b> 21 Februari 2026</p>
+      <p><b>Masa:</b> 9:00 AM - 12:30 PM</p>
+      <p><b>Lokasi:</b> Dewan Harumanis</p>
+
+      <div class="img-box">
+        <p><b>Penceramah:</b> Professor Dr. Ustaz Hadif Zakwan</p>
+        <img src="penceramah.png" alt="Gambar Penceramah">
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Atur Cara Ceramah</h2>
+      <ul>
+        <li>9:00 AM - Pendaftaran Peserta</li>
+        <li>9:30 AM - Pengenalan Ceramah</li>
+        <li>10:00 AM - Slot Utama: Teknik Landing Page</li>
+        <li>11:30 AM - Sesi Soal Jawab</li>
+        <li>12:30 PM - Tamat</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Senarai Harga Mengikut Kategori</h2>
+      <table>
+        <tr><th>Kategori</th><th>Harga Unit (RM)</th></tr>
+        <tr><td>Pelajar</td><td>20</td></tr>
+        <tr><td>Pensyarah</td><td>40</td></tr>
+        <tr><td>Orang Awam</td><td>50</td></tr>
+        <tr><td>Korporat</td><td>60</td></tr>
+      </table>
+    </div>
+
+    <div class="box">
+      <h2>Sinopsis</h2>
+      <p>
+        Ceramah ini membantu peserta memahami asas pembangunan laman web iklan
+        serta cara membina borang tempahan yang mudah dan berfungsi menggunakan PHP.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Borang Tempahan</h2>
+
+      <form action="pengesahan.php" method="POST" enctype="multipart/form-data">
+
+        <label>Nama Penuh</label>
+        <input type="text" name="nama" required />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>No Telefon</label>
+        <input type="text" name="telefon" required />
+
+        <label>Kategori Peserta</label>
+        <select name="kategori" required>
+          <option value="">-- Pilih --</option>
+          <option value="Pelajar">Pelajar</option>
+          <option value="Pensyarah">Pensyarah</option>
+          <option value="Orang Awam">Orang Awam</option>
+          <option value="Korporat">Korporat</option>
+        </select>
+
+        <label>Bilangan Slot</label>
+        <input type="number" name="slot" min="1" max="10" required />
+
+        <label>Bukti Bayaran</label>
+        <input type="file" name="bukti" accept=".jpg,.jpeg,.png,.pdf" required />
+
+        <label>
+          <input type="checkbox" name="perakuan" value="setuju" required />
+          Saya bersetuju dengan Terma & Syarat
+        </label>
+
+        <button type="submit">Hantar Tempahan</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  <footer>
+    Hubungi: hadif.zakwan@gmail.com | 014-9217889
+  </footer>
+
+</body>
+</html>
